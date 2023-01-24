@@ -16,24 +16,28 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 public class CpfService {
+	
+	 private Random random = new Random();
 
 	/**
 	 * Validates if cpf is valid
+	 * 
 	 * @param cpf - cpf string
 	 * @throws CpfNotFoundException if cpf is invalid
 	 */
 	public void validatesCPF(String cpf) {
 		if (!CpfUtils.isCPF(cpf))
-			throw new CpfNotFoundException(Error.CPF_NOT_FOUND.getMessage(), Error.CPF_NOT_FOUND.getCode());
+			throw new CpfNotFoundException(Error.CPF_IS_INVALID.getMessage(), Error.CPF_IS_INVALID.getCode());
 	}
-	
+
 	/**
 	 * Simulates some service rule that defines if a user is able to vote by cpf
+	 * 
 	 * @param cpf - cpf string
 	 * @return true when is able to vote
 	 */
 	public boolean isAbleToVote(String cpf) {
-		return new Random().nextBoolean();
+		return random.nextBoolean();
 	}
 
 }
