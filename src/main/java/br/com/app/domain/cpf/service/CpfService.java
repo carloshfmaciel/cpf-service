@@ -2,22 +2,19 @@ package br.com.app.domain.cpf.service;
 
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.app.domain.cpf.controller.exception.CpfNotFoundException;
 import br.com.app.domain.cpf.utils.CpfUtils;
 import br.com.app.infrastructure.exception.Error;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@AllArgsConstructor(onConstructor_ = @Autowired)
 public class CpfService {
 	
-	 private Random random = new Random();
+	 Random random = new Random();
 
 	/**
 	 * Validates if cpf is valid
