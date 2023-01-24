@@ -12,3 +12,10 @@ It is a dependency of the [agenda-service]() project and has the only purpose to
 mvn clean install
 java -jar target/cpf-service-0.0.1-SNAPSHOT.jar
 ```
+## Acessing Swagger UI
+
+```
+http://localhost:3001/swagger-ui/index.html
+```
+
+![](docs/screenshots/0001.JPG)
